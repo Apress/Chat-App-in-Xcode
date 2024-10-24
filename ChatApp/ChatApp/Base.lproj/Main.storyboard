@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-Ac-EnF">
+                                <rect key="frame" x="8" y="125" width="377" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Rzb-0X-fr2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aod-kB-WX8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vqa-uF-bvN">
+                                <rect key="frame" x="8" y="67" width="377" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xie-Sc-QLA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vqa-uF-bvN" secondAttribute="trailing" constant="8" id="2I9-MI-hA1"/>
+                            <constraint firstItem="vqa-uF-bvN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Ilh-Ef-EbO"/>
+                            <constraint firstItem="lfQ-Ac-EnF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="KTi-0T-XdI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lfQ-Ac-EnF" secondAttribute="trailing" constant="8" id="Qy7-kr-0nB"/>
+                            <constraint firstItem="lfQ-Ac-EnF" firstAttribute="top" secondItem="vqa-uF-bvN" secondAttribute="bottom" constant="8" id="ZDb-t2-O8I"/>
+                            <constraint firstItem="vqa-uF-bvN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="upR-Tu-NB7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="vqa-uF-bvN" id="ZT3-1g-BEd"/>
+                        <segue destination="2tZ-W9-lQZ" kind="presentation" identifier="OpenChat" modalPresentationStyle="fullScreen" id="kvW-UP-PcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-6"/>
+        </scene>
+        <!--Chat Controller-->
+        <scene sceneID="tcp-ZV-K45">
+            <objects>
+                <viewController id="2tZ-W9-lQZ" customClass="ChatController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tP5-Y0-Kxf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vlV-Sy-65t">
+                                <rect key="frame" x="8" y="124" width="377" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiZ-g3-4vb">
+                                <rect key="frame" x="8" y="8" width="377" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Rq9-lD-ZRx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cB-IN-7zd">
+                                <rect key="frame" x="8" y="66" width="377" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RhZ-rs-MEq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send"/>
+                                <connections>
+                                    <action selector="sendButtonAction:" destination="2tZ-W9-lQZ" eventType="touchUpInside" id="VEZ-3z-1aW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="neI-B0-c0b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="neI-B0-c0b" firstAttribute="trailing" secondItem="7cB-IN-7zd" secondAttribute="trailing" constant="8" id="7et-1A-goE"/>
+                            <constraint firstItem="neI-B0-c0b" firstAttribute="trailing" secondItem="AiZ-g3-4vb" secondAttribute="trailing" constant="8" id="Bsl-UL-xpU"/>
+                            <constraint firstItem="vlV-Sy-65t" firstAttribute="leading" secondItem="neI-B0-c0b" secondAttribute="leading" constant="8" id="EFh-m1-2KK"/>
+                            <constraint firstItem="vlV-Sy-65t" firstAttribute="leading" secondItem="neI-B0-c0b" secondAttribute="leading" constant="8" id="JcJ-NG-qca"/>
+                            <constraint firstItem="7cB-IN-7zd" firstAttribute="leading" secondItem="neI-B0-c0b" secondAttribute="leading" constant="8" id="KXC-kj-5oP"/>
+                            <constraint firstItem="neI-B0-c0b" firstAttribute="bottom" secondItem="vlV-Sy-65t" secondAttribute="bottom" constant="8" id="Mha-aA-Qfg"/>
+                            <constraint firstItem="neI-B0-c0b" firstAttribute="trailing" secondItem="vlV-Sy-65t" secondAttribute="trailing" constant="8" id="Mj7-xq-LMS"/>
+                            <constraint firstItem="AiZ-g3-4vb" firstAttribute="leading" secondItem="neI-B0-c0b" secondAttribute="leading" constant="8" id="NOq-GX-9dN"/>
+                            <constraint firstItem="7cB-IN-7zd" firstAttribute="top" secondItem="AiZ-g3-4vb" secondAttribute="bottom" constant="8" id="WWB-Bu-03j"/>
+                            <constraint firstItem="neI-B0-c0b" firstAttribute="trailing" secondItem="vlV-Sy-65t" secondAttribute="trailing" constant="8" id="Wxu-8Y-Lea"/>
+                            <constraint firstItem="vlV-Sy-65t" firstAttribute="top" secondItem="7cB-IN-7zd" secondAttribute="bottom" constant="8" id="aMI-bD-aq5"/>
+                            <constraint firstItem="AiZ-g3-4vb" firstAttribute="top" secondItem="neI-B0-c0b" secondAttribute="top" constant="8" id="rGc-Hg-8RI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chatField" destination="vlV-Sy-65t" id="ZZr-ms-9dL"/>
+                        <outlet property="messageField" destination="AiZ-g3-4vb" id="RvH-MD-5G6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZR-En-s7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835.87786259541986" y="-6.3380281690140849"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
